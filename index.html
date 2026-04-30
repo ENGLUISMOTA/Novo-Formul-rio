@@ -694,6 +694,30 @@
                     </div>
                 </div>
 
+                <div class="question" id="q16">
+                    <div class="q-label-row">
+                        <label class="q-label">Você possui os dados de faturamento/vendas dos últimos 3 meses?</label>
+                        <div class="q-badges">
+                            <span class="badge-sensitive">Confidencial</span>
+                            <button class="btn-explain" onclick="toggleExplain('exp16')">? Explicar</button>
+                        </div>
+                    </div>
+                    <div class="explain-box" id="exp16">
+                        <p>Fundamental para termos uma linha de base e provarmos matematicamente o resultado do nosso trabalho. Saber de onde estamos partindo é essencial para medir o crescimento.</p>
+                    </div>
+                    <div class="options-grid">
+                        <div class="opt-item" id="q16-sim" onclick="selectOpt('q16','Sim, possuo os dados')">
+                            <div class="opt-dot"></div> Sim, possuo os dados
+                        </div>
+                        <div class="opt-item" id="q16-nao" onclick="selectOpt('q16','Não possuo ou estão incompletos')">
+                            <div class="opt-dot"></div> Não possuo ou estão incompletos
+                        </div>
+                        <div class="opt-item decline" id="q16-skip" onclick="toggleSkip('q16')">
+                            <div class="opt-dot"></div> Não desejo responder
+                        </div>
+                    </div>
+                </div>
+
                 <div class="question" id="q3">
                     <div class="q-label-row">
                         <label class="q-label">Você tem clareza de quem é o seu cliente comprador? Descreva
@@ -916,6 +940,53 @@
                     </div>
                 </div>
 
+                <div class="question" id="q17">
+                    <div class="q-label-row">
+                        <label class="q-label">Você utiliza algum Sistema de Gestão de Estoque ou ERP atualmente?</label>
+                        <div class="q-badges"><button class="btn-explain" onclick="toggleExplain('exp17')">?
+                                Explicar</button></div>
+                    </div>
+                    <div class="explain-box" id="exp17">
+                        <p>Foco no Produto: Informação vital caso decidamos conectar o seu estoque físico a um catálogo inteligente ou a um futuro e-commerce para vendas online.</p>
+                    </div>
+                    <div class="options-grid">
+                        <div class="opt-item" id="q17-sim" onclick="selectOpt('q17','Sim, utilizo'); showConditional('q17-cond')">
+                            <div class="opt-dot"></div> Sim, utilizo
+                        </div>
+                        <div class="opt-item" id="q17-nao" onclick="selectOpt('q17','Não utilizo'); hideConditional('q17-cond')">
+                            <div class="opt-dot"></div> Não utilizo
+                        </div>
+                        <div class="opt-item decline" id="q17-skip" onclick="toggleSkip('q17')">
+                            <div class="opt-dot"></div> Não desejo responder
+                        </div>
+                    </div>
+                    <div class="conditional-field" id="q17-cond">
+                        <input type="text" class="q-input" id="q17-ans" placeholder="Qual sistema ou ERP você usa?" style="margin-top:8px;">
+                    </div>
+                </div>
+
+                <div class="question" id="q18">
+                    <div class="q-label-row">
+                        <label class="q-label">A loja possui um computador de fácil acesso para os atendentes no balcão?</label>
+                        <div class="q-badges"><button class="btn-explain" onclick="toggleExplain('exp18')">?
+                                Explicar</button></div>
+                    </div>
+                    <div class="explain-box" id="exp18">
+                        <p>Necessário para implementarmos o sistema de validação de cupons e mensuração do marketing. Ajuda a rastrear a venda no momento em que ela acontece.</p>
+                    </div>
+                    <div class="options-grid">
+                        <div class="opt-item" id="q18-sim" onclick="selectOpt('q18','Sim, temos no balcão')">
+                            <div class="opt-dot"></div> Sim, temos no balcão
+                        </div>
+                        <div class="opt-item" id="q18-nao" onclick="selectOpt('q18','Não temos ou fica no escritório')">
+                            <div class="opt-dot"></div> Não temos ou fica no escritório
+                        </div>
+                        <div class="opt-item decline" id="q18-skip" onclick="toggleSkip('q18')">
+                            <div class="opt-dot"></div> Não desejo responder
+                        </div>
+                    </div>
+                </div>
+
                 <div class="block-nav">
                     <button class="btn-nav" onclick="goBlock(1)">← Anterior</button>
                     <button class="btn-nav primary" onclick="goBlock(3)">Próximo Bloco →</button>
@@ -1042,6 +1113,28 @@
                             <div class="opt-dot"></div> Não tenho, precisaria produzir
                         </div>
                         <div class="opt-item decline" id="q14-skip" onclick="toggleSkip('q14')">
+                            <div class="opt-dot"></div> Não desejo responder
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question" id="q19">
+                    <div class="q-label-row">
+                        <label class="q-label">Você está disposto a criar uma "Oferta de Entrada" (ex: cupom de desconto ou brinde)?</label>
+                        <div class="q-badges"><button class="btn-explain" onclick="toggleExplain('exp19')">?
+                                Explicar</button></div>
+                    </div>
+                    <div class="explain-box" id="exp19">
+                        <p>Essa ação é inegociável para conseguirmos rastrear exatamente quem veio da internet e comprou na loja física. Sem uma oferta clara, perdemos o rastro da conversão.</p>
+                    </div>
+                    <div class="options-grid">
+                        <div class="opt-item" id="q19-sim" onclick="selectOpt('q19','Sim, estou disposto')">
+                            <div class="opt-dot"></div> Sim, estou disposto
+                        </div>
+                        <div class="opt-item" id="q19-talvez" onclick="selectOpt('q19','Talvez, preciso de ajuda para criar')">
+                            <div class="opt-dot"></div> Talvez, preciso de ajuda para criar
+                        </div>
+                        <div class="opt-item decline" id="q19-skip" onclick="toggleSkip('q19')">
                             <div class="opt-dot"></div> Não desejo responder
                         </div>
                     </div>
@@ -1213,7 +1306,7 @@
         }
 
         function saveDraft() {
-            const textFields = ['q1-ans', 'q2-ans', 'q3-ans', 'q4-ans', 'q5-ans', 'q6-url', 'q7-ans', 'q8-freq', 'q11-detail'];
+            const textFields = ['q1-ans', 'q2-ans', 'q3-ans', 'q4-ans', 'q5-ans', 'q6-url', 'q7-ans', 'q8-freq', 'q11-detail', 'q17-ans'];
             const draft = { answers: { ...answers }, skipped: { ...skipped }, texts: {} };
             textFields.forEach(id => {
                 const el = document.getElementById(id);
@@ -1249,12 +1342,16 @@
         function calcScore() {
             saveDraft();
             const scored = {
+                q16: { 'Sim, possuo os dados': 3, 'Não possuo ou estão incompletos': 0 },
                 q6: { 'Sim, tenho': 3, 'Está em desenvolvimento': 1, 'Não tenho': 0 },
                 q9: { 'Sim, consigo atender rapidamente': 3, 'Parcialmente — há horários com demora': 1, 'Não, é um ponto fraco hoje': 0 },
                 q10: { 'Sistema de gestão ou CRM': 3, 'Planilha ou caderno': 1, 'Não fazemos esse registro': 0 },
+                q17: { 'Sim, utilizo': 3, 'Não utilizo': 0 },
+                q18: { 'Sim, temos no balcão': 3, 'Não temos ou fica no escritório': 0 },
                 q12: { 'Sim, está atualizado com fotos e avaliações': 3, 'Existe, mas está desatualizado': 1, 'Não tenho ou não sei': 0 },
                 q13: { 'Sim, tenho acesso de administrador': 3, 'Tenho, mas acesso limitado': 1, 'Não tenho': 0 },
                 q14: { 'Sim, tenho bom material disponível': 3, 'Tenho algumas fotos, mas poucas': 1, 'Não tenho, precisaria produzir': 0 },
+                q19: { 'Sim, estou disposto': 3, 'Talvez, preciso de ajuda para criar': 1 },
                 q15: { 'Até R$ 100/mês': 0, 'Entre R$ 100 e R$ 200/mês': 1, 'Entre R$ 200 e R$ 300/mês': 2, 'Acima de R$ 300/mês': 3 },
             };
 
@@ -1311,6 +1408,7 @@
                     title: 'Bloco 1 — Estrutura Comercial', qs: [
                         { id: 'q1', label: 'Produtos principais', text: 'q1-ans' },
                         { id: 'q2', label: 'Ticket médio', text: 'q2-ans' },
+                        { id: 'q16', label: 'Dados de faturamento' },
                         { id: 'q3', label: 'Público-alvo', text: 'q3-ans' },
                         { id: 'q4', label: 'Concorrentes', text: 'q4-ans' },
                         { id: 'q5', label: 'Meta 3 meses', text: 'q5-ans' },
@@ -1323,6 +1421,8 @@
                         { id: 'q8', label: 'Gestão de postagens' },
                         { id: 'q9', label: 'Capacidade de atendimento' },
                         { id: 'q10', label: 'Cadastro de clientes' },
+                        { id: 'q17', label: 'ERP / Gestão', text: 'q17-ans' },
+                        { id: 'q18', label: 'Computador balcão' },
                     ]
                 },
                 {
@@ -1331,6 +1431,7 @@
                         { id: 'q12', label: 'Google Meu Negócio' },
                         { id: 'q13', label: 'Meta Ads' },
                         { id: 'q14', label: 'Material visual' },
+                        { id: 'q19', label: 'Oferta de entrada' },
                         { id: 'q15', label: 'Orçamento para anúncios' },
                     ]
                 },
@@ -1376,6 +1477,7 @@
 BLOCO 1 — ESTRUTURA COMERCIAL
 • Produtos principais: ${getAns('q1', 'q1-ans')}
 • Ticket médio: ${getAns('q2', 'q2-ans')}
+• Dados faturamento: ${getAns('q16')}
 • Público-alvo: ${getAns('q3', 'q3-ans')}
 • Concorrentes: ${getAns('q4', 'q4-ans')}
 • Meta 3 meses: ${getAns('q5', 'q5-ans')}
@@ -1386,12 +1488,15 @@ BLOCO 2 — INFRAESTRUTURA
 • Gestão de postagens: ${getAns('q8')} | Frequência: ${getTextVal('q8-freq') || '—'}
 • Capacidade de atendimento: ${getAns('q9')}
 • Cadastro de clientes: ${getAns('q10')}
+• Sistema ERP: ${getAns('q17')} | Qual: ${getTextVal('q17-ans') || '—'}
+• Computador balcão: ${getAns('q18')}
 ─────────────────────────
 BLOCO 3 — CANAIS E INVESTIMENTO
 • Histórico de anúncios: ${getAns('q11')}
 • Google Meu Negócio: ${getAns('q12')}
 • Meta Ads: ${getAns('q13')}
 • Material visual: ${getAns('q14')}
+• Oferta de entrada: ${getAns('q19')}
 • Orçamento para anúncios: ${getAns('q15')}
 ─────────────────────────
 Formulário Preliminar de Marketing Digital — Eng. Luis Mota`;
