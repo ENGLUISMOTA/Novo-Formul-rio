@@ -790,7 +790,7 @@
                             <div class="opt-dot"></div> Não tenho
                         </div>
                         <div class="opt-item" id="q6-dev"
-                            onclick="selectOpt('q6','Em desenvolvimento'); hideConditional('q6-cond')">
+                            onclick="selectOpt('q6','Está em desenvolvimento'); hideConditional('q6-cond')">
                             <div class="opt-dot"></div> Está em desenvolvimento
                         </div>
                         <div class="opt-item decline" id="q6-skip" onclick="toggleSkip('q6')">
@@ -1249,7 +1249,7 @@
         function calcScore() {
             saveDraft();
             const scored = {
-                q6: { 'Sim, tenho': 3, 'Em desenvolvimento': 1, 'Não tenho': 0 },
+                q6: { 'Sim, tenho': 3, 'Está em desenvolvimento': 1, 'Não tenho': 0 },
                 q9: { 'Sim, consigo atender rapidamente': 3, 'Parcialmente — há horários com demora': 1, 'Não, é um ponto fraco hoje': 0 },
                 q10: { 'Sistema de gestão ou CRM': 3, 'Planilha ou caderno': 1, 'Não fazemos esse registro': 0 },
                 q12: { 'Sim, está atualizado com fotos e avaliações': 3, 'Existe, mas está desatualizado': 1, 'Não tenho ou não sei': 0 },
