@@ -113,23 +113,153 @@
         }
 
         .btn-primary {
-            display: inline-block;
-            padding: 14px 40px;
-            border: 1px solid var(--white-40);
-            background: transparent;
-            color: var(--white);
-            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--navy);
+            border: none;
+            padding: 1rem 2.5rem;
             font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-weight: 500;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.2s;
-            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid var(--white-40);
+            padding: 1rem 2.5rem;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn-outline:hover {
             background: var(--white-08);
-            border-color: var(--white-70);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .intro-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+            .intro-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .btn-outline { margin-top: 0; }
+        }
+
+        /* TUTORIAL SECTION */
+        .tutorial-container {
+            display: none;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            text-align: left;
+            background: var(--white-08);
+            border: 1px solid var(--white-15);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        .tutorial-container.open {
+            display: block;
+        }
+
+        .tutorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tutorial-step {
+            margin-bottom: 1.5rem;
+        }
+
+        .tutorial-step-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: var(--white-15);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .tutorial-step-title {
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .tutorial-step-desc {
+            font-size: 13px;
+            color: var(--white-70);
+            line-height: 1.6;
+            margin-left: 34px;
+        }
+
+        .tutorial-tip {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--white-15);
+            font-size: 13px;
+            color: var(--white-70);
+            line-height: 1.6;
+        }
+
+        .tutorial-video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff000022;
+            color: #ff5555;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ff000044;
+            transition: all 0.3s ease;
+        }
+
+        .tutorial-video-link:hover {
+            background: #ff000044;
+            transform: scale(1.02);
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* FORMULÁRIO */
@@ -628,7 +758,66 @@
             e como resolver isso com uma estratégia de marketing digital personalizada.
         </p>
         <p class="intro-time">Tempo estimado: 5 a 8 minutos</p>
-        <button class="btn-primary" onclick="goToForm()">Iniciar Diagnóstico</button>
+        
+        <div class="intro-actions">
+            <button class="btn-primary" onclick="goToForm()">Iniciar Diagnóstico</button>
+            <button class="btn-outline" onclick="toggleTutorial()">Como preencher o formulário</button>
+        </div>
+
+        <div id="tutorial" class="tutorial-container">
+            <h2 class="tutorial-title">Passo a Passo para Preencher o Formulário</h2>
+            
+            <a href="https://youtu.be/-8a8VN-B8ZA" target="_blank" class="tutorial-video-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Assistir tutorial no YouTube
+            </a>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">1</span> Acesso ao Formulário</div>
+                <div class="tutorial-step-desc">O formulário pode ser acessado diretamente por este site.</div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">2</span> Iniciar Diagnóstico</div>
+                <div class="tutorial-step-desc">Na página inicial, clique no botão "Iniciar Diagnóstico" para começar o preenchimento.</div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">3</span> Preenchimento dos Blocos</div>
+                <div class="tutorial-step-desc">
+                    Avance por cada um dos três blocos, respondendo às perguntas de forma honesta e detalhada. 
+                    <br><br>
+                    <strong>Dica:</strong> Utilize o botão "? Explicar" ao lado das perguntas para obter mais contexto sobre a importância daquela informação.
+                </div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">4</span> Navegação entre Blocos</div>
+                <div class="tutorial-step-desc">Ao final de cada bloco, clique em "Próximo Bloco →". Se precisar revisar, utilize o botão "← Anterior".</div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">5</span> Visualizar Resultado</div>
+                <div class="tutorial-step-desc">Após preencher todos os blocos, clique em "Ver Resultado →". O sistema apresentará sua análise inicial.</div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">6</span> Resumo do Diagnóstico</div>
+                <div class="tutorial-step-desc">Veja seu percentual de maturidade e clique em "Ver Resumo do Diagnóstico →" para acessar a tabela detalhada.</div>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="tutorial-step-title"><span class="tutorial-step-num">7</span> Opções Finais</div>
+                <div class="tutorial-step-desc">No resumo final, clique em "Enviar para Eng. Luis Mota →" para compartilhar via WhatsApp ou "Preencher Novamente".</div>
+            </div>
+
+            <div class="tutorial-tip">
+                <strong>Dicas Importantes:</strong><br>
+                • <strong>Seja detalhado:</strong> Quanto mais informações, mais preciso será o diagnóstico.<br>
+                • <strong>Tempo estimado:</strong> Reserve de 5 a 8 minutos.<br>
+                • <strong>Confidencialidade:</strong> Dados sensíveis são tratados com total discrição.
+            </div>
+        </div>
     </div>
 
     <!-- TELA FORMULÁRIO -->
@@ -1240,7 +1429,17 @@
             document.getElementById('screen-intro').style.display = 'none';
             document.getElementById('screen-form').style.display = 'block';
             updateProgress(1);
+            window.scrollTo(0, 0);
             loadDraft();
+        }
+
+        function toggleTutorial() {
+            document.getElementById('tutorial').classList.toggle('open');
+            if (document.getElementById('tutorial').classList.contains('open')) {
+                setTimeout(() => {
+                    document.getElementById('tutorial').scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
         }
 
         function updateProgress(block) {
